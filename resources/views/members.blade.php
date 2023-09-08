@@ -16,7 +16,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <    <div style="background-color:black;" class="relative flex justify-center items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-black">
+        <div style="background-color:black;" class="relative flex justify-center items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-black">
             <div style="color:white;">    
                 
                 <h1 style="padding:3px">Add Members To Database</h1></br>
@@ -39,6 +39,13 @@
 
                     <button type="submit" style="padding:3px; background-color:white; border-radius:5px; color:blue" >Add</button>
                 </form>
+
+                @foreach ($DB_Items as $dbItem)
+                    <div class="flex" style="align-items: center;">
+                        <p>Item Number {{ $dbItem->id }}: {{ $dbItem->fname }} - {{ $dbItem->lname }} - {{ $dbItem->age }}  ---> </p>
+                    </div>
+                @endforeach
+
             </div>
         </div>
     </body>

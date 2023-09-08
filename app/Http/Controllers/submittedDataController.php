@@ -9,7 +9,7 @@ use App\Models\MemberData;
 class submittedDataController extends Controller
 {
     public function homePage(){
-        return view('members');
+        return view('members', ['DB_Items' => MemberData::all()]);
     }
 
     public function addMember(Request $request) {
