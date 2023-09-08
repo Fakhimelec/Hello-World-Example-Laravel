@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\submittedDataController;
+
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +16,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('members');
 });
 
 Route::post('/addMember', function (Request $request) {
     echo $request->post('member_lname');
     return view('members');
-})->name('addMember');
+})->name('addMember'); */
+
+Route::get('/', [submittedDataController::class, 'homePage']);
+
+Route::post('/addMemberPage', [submittedDataController::class, 'addMember'])->name('addMember');
