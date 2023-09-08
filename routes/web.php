@@ -28,3 +28,5 @@ Route::post('/addMember', function (Request $request) {
 Route::get('/', [submittedDataController::class, 'homePage']);
 
 Route::post('/addMemberPage', [submittedDataController::class, 'addMember'])->name('addMember');
+
+Route::post('/delMemberPage/{id}', [submittedDataController::class, 'delMember'])->name('delMember');

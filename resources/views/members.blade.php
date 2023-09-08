@@ -43,6 +43,10 @@
                 @foreach ($DB_Items as $dbItem)
                     <div class="flex" style="align-items: center;">
                         <p>Item Number {{ $dbItem->id }}: {{ $dbItem->fname }} - {{ $dbItem->lname }} - {{ $dbItem->age }}  ---> </p>
+                        <form method="post" action="{{route('delMember', $dbItem->id)}}" accept-charset="UTF-8"]>
+                            {{ csrf_field() }}
+                            <button style="height:30px;margin-top:5px;padding:3px; background-color:white; border-radius:5px; color:blue"> Delete </input>
+                        </form>
                     </div>
                 @endforeach
 

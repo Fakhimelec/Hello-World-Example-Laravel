@@ -22,4 +22,12 @@ class submittedDataController extends Controller
 
         return redirect('/');
     }
+
+    public function delMember($id) {
+        
+        $toBeDeletedMember = MemberData::find($id);
+        $toBeDeletedMember->delete();
+
+        return redirect('/');
+    }
 }
