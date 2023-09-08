@@ -21,7 +21,7 @@
                 
                 <h1 style="padding:3px">Add Members To Database</h1></br>
                 
-                <form method="post" action="" accept-charset="UTF-8"]>
+                <form method="post" action="{{route('addMember')}}" accept-charset="UTF-8"]>
                     {{ csrf_field() }}
 
                     <label for="member_fname">Member First Name</label></br>

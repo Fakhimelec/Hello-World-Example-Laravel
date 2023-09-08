@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('members');
 });
+
+Route::post('/addMember', function (Request $request) {
+    echo $request->post('member_lname');
+    return view('members');
+})->name('addMember');
